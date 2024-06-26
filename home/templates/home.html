@@ -1,8 +1,49 @@
 {% extends 'layout.html' %}
+
 {% block title %}
-Home
+Home | Md Anisur Rahman - MERN Stack Backend Developer
 {% endblock %}
 
 {% block content %}
-<h1 class="font-semibold">Home Page</h1>
+<div class="container mx-auto px-4 py-8">
+    <!-- Introduction Section -->
+    <div class="bg-gray-900 text-white p-8 rounded-lg mb-8 text-center">
+        <h1 class="text-5xl font-bold mb-4">Md Anisur Rahman</h1>
+        <p class="text-xl">Professional MERN Stack Backend Web Developer</p>
+    </div>
+
+    <!-- Banner Section -->
+    {% for data in datas %}
+        <div class="relative bg-gray-800 text-white mb-8 rounded-lg overflow-hidden">
+            <img src="{{ data.bannerImg.url }}" alt="Banner Image" class="w-full h-64 object-cover opacity-70">
+            <div class="absolute inset-0 flex items-center justify-center">
+                <h1 class="text-4xl font-bold text-center">{{ data.bannerText }}</h1>
+            </div>
+        </div>
+    {% endfor %}
+
+    <!-- About Section -->
+    <div class="bg-gray-100 text-gray-900 p-8 rounded-lg mb-8">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="text-lg">I am a dedicated backend web developer specializing in the MERN stack. With extensive experience in building robust and scalable web applications, I am passionate about coding and continuously learning new technologies to enhance my skills.</p>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-gray-100 text-gray-900 p-8 rounded-lg mb-8">
+        <h2 class="text-3xl font-bold mb-4">Services</h2>
+        <ul class="list-disc pl-5 text-lg">
+            <li>Backend Development with Node.js, Express.js, MongoDB, and more</li>
+            <li>API Development and Integration</li>
+            <li>Database Design and Management</li>
+            <li>Performance Optimization and Security</li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="bg-gray-100 text-gray-900 p-8 rounded-lg mb-8">
+        <h2 class="text-3xl font-bold mb-4">Contact</h2>
+        <p class="text-lg">Feel free to reach out to me for any web development needs or collaborations.</p>
+        <p class="text-lg">Email: anisur@example.com</p>
+    </div>
+</div>
 {% endblock %}

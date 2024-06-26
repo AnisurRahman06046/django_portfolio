@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import HomeModel
 # Create your views here.
 def home(request):
-    return render(request,'home.html')
+    data = HomeModel.objects.all()
+    return render(request,'home.html',{'datas':data})
